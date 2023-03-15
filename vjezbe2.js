@@ -9,7 +9,7 @@
 function squareMe(numb) {
     return numb * numb;
 }
-squareMe();
+squareMe(2);
 
 //2. Anonymous Functions
 //primjer 2
@@ -27,13 +27,13 @@ const square = function (numb) {
     return numb * numb;
 }
 
-//4. Imeediately Invoked function Expression (IIFE)
-//Primjer 4
+    //4. Imeediately Invoked function Expression (IIFE)
+    //Primjer 4
 
-(function () {
-    let numb = 3;
-    console.log(numb * numb);
-})()
+    (function () {
+        let numb = 3;
+        console.log(numb * numb);
+    })()
 
 //5. Arrow Functions
 //primjer 5
