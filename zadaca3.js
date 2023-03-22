@@ -106,6 +106,32 @@ let prosjekDeveloperskihPlaca = [
     }
 ];
 
+// 3.
+let sum = 0;
+let count = 0;
+
+prosjekDeveloperskihPlaca.forEach(obj => {
+    if (obj.senioritet === "junior") {
+        sum += obj.placa;
+        count++;
+    }
+});
+
+const prosjekJuniorskihPlaca = sum / count;
+console.log(prosjekJuniorskihPlaca);
+
+
+//4. 
+const plate = prosjekDeveloperskihPlaca.map(obj => obj.placa);
+const sortedPlates = plate.sort((a, b) => a - b);
+const middleIndex = Math.floor(sortedPlates.length / 2);
+
+const medijanPlaca = sortedPlates.length % 2 !== 0
+    ? sortedPlates[middleIndex]
+    : (sortedPlates[middleIndex - 1] + sortedPlates[middleIndex]) / 2;
+
+console.log(medijanPlaca);
+
 //5. ISPISI
 let levels = {
     prvaRazina: {
@@ -139,3 +165,16 @@ let levels = {
         }
     }
 }
+
+//5.
+function printLevels(obj) {
+    for (const key in obj) {
+        if (typeof obj[key] === 'object') {
+            printLevels(obj[key]);
+        } else if (typeof obj[key] === 'function') {
+            obj[key]();
+        }
+    }
+}
+
+printLevels(levels);
